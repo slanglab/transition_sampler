@@ -6,12 +6,11 @@ This code is for the paper:
 
 # Files
 
-
 - `add_sampler_to_corenlp_nndep.diff`: to run the transition sampler (see below)
 - `corenlp` symlink: to help run the transition sampler (see below)
 - `examples/`: Parse samples for a few example sentences.
 - `parsetext.sh`: runs the transition sampler (see below)
-- `stuff`: Analysis scripts for parse samples, and outputs from the UD 1.3 dev set.
+- `stuff/`: Analysis scripts for parse samples.
 - `srl_experiments`: scripts and notes from the SRL (semantic role assignment) experiment
 - `pf`: scripts and notes from the police fatalities experiment
 - `ud_parses`: experiments on the UD 1.3 dev set, specifically for the precision-recall analysis.
@@ -24,7 +23,9 @@ Requires Java to be installed and runnable.  Uses a precompiled version we check
 
 2. Unzip it in this directory.
 
-3. Now you should be able to run:
+3. `unzip target_prebuilt.zip`
+
+4. Now you should be able to run:
 
         echo -e "I saw the house with a fork.\n\nI saw the house with a chimney.\n\nI saw the house with a telescope." > doc.txt
 
@@ -65,6 +66,11 @@ To view the edge marginals:
 7    telescope       NN      2-nmod:0.90 4-nmod:0.10
 8    .               .       2-punct:1.00
 ```
+
+Or for a more complex example:
+
+![](pf1_edgemar_screenshot.png)
+
 
 # Compiling the transition sampler
 
