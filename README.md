@@ -6,7 +6,7 @@ This code is for the paper:
 
 # Files
 
-- `add_sampler_to_corenlp_nndep.diff`: to run the transition sampler (see below)
+- `add_sampler_to_corenlp_nndep.diff`: to compile the transition sampler (see below)
 - `corenlp` symlink: to help run the transition sampler (see below)
 - `examples/`: Parse samples for a few example sentences.
 - `parsetext.sh`: runs the transition sampler (see below)
@@ -33,7 +33,7 @@ Requires Java to be installed and runnable.  Uses a precompiled version we check
 
         ./parsetext.sh doc.txt
 
-That first creates `doc.txt.conllu` (for its tokenization, and incidentally with a greedy decoding too), and second, it outputs `doc.txt.pred` with the samples.
+This first creates `doc.txt.conllu` (for its tokenization, and incidentally with a greedy decoding too), and second, it outputs `doc.txt.pred` with the samples.  (The sampling step actually doesn't require the corenlp download; if you can tokenize+postag to conll format yourself, you can just run the sampler off that.)
 
 Each tree sample is a column.  Columns are appended on the right side of the `doc.txt.pred` file.
 
@@ -69,7 +69,7 @@ To view the edge marginals:
 8    .               .       2-punct:1.00
 ```
 
-Or for a more complex example:
+A more complex example:
 
 ![](pf1_edgemar_screenshot.png)
 
