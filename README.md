@@ -11,9 +11,11 @@ This code is for the paper:
 - `examples/`: Parse samples for a few example sentences.
 - `parsetext.sh`: runs the transition sampler (see below)
 - `stuff/`: Analysis scripts for parse samples.
-- `srl_experiments`: scripts and notes from the SRL (semantic role assignment) experiment
-- `pf`: scripts and notes from the police fatalities experiment
-- `ud_parses`: experiments on the UD 1.3 dev set, specifically for the precision-recall analysis.
+- `srl_experiments/`: scripts and notes from the SRL (semantic role assignment) experiment
+- `pf/`: scripts and notes from the police fatalities experiment
+- `ud_parses/`: experiments on the UD 1.3 dev set, specifically for path prediction and its precision-recall and calibration.
+
+The `stuff/` directory includes lots of parse output too, as zip files.  The path marginals output used for `ud_parses/` is a bit larger (~925MB uncompressed, 53MB compressed) so isn't included, but ask us if you need it.
 
 # Running the transition sampler
 
