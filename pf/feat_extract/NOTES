@@ -1,0 +1,72 @@
+HOW TO RUN
+-----------
+./run.sh
+(see that script for more details)
+Runs: 
+1. extracting features
+2. runs thru pf logreg code to make predictions 
+
+
+----------------------
+BASELINE
+----------------------
+Baseline (from paper):
+hard-LR, dep. feats. 
+AUC 0.117, F1 0.229
+
+-----------------------
+EXPERIMENT RESULTS B (feature assignment B (each dependency sample gets own row in matrix))
+----------------------
+
+===10 samp results
+num in test set 452, num historical 17196
+Reading mention-level predictions from standard input
+Number of mentions: 68925
+Best recall 0.570796460177
+Best F1 0.235582822086 for (p,r)= 0.264462809917 0.212389380531
+AUC 0.11771820865 (stdev across tiebreakings: 2.77555756156e-17)
+============
+
+===100 samp results
+num in test set 452, num historical 17196
+Reading mention-level predictions from standard input
+Number of mentions: 68925
+Best recall 0.570796460177
+Best F1 0.233846153846 for (p,r)= 0.217973231358 0.252212389381
+AUC 0.118287204329 (stdev across tiebreakings: 1.38777878078e-17)
+
+------
+OLD
+------
+-----------------------
+EXPERIMENT RESULTS (put counts directly in the matrix))
+
+--WRONG, OLD
+--this is bad b/c I should be averaging over all parse samples! 
+--moved to old2-worked 
+----------------------
+10 samp: 
+
+(pf)kkeith@hobbes:~/policefatalities_emnlp2017$ cat code/models/preds/em0.json | python code/eval/evaluation.py
+num in test set 452, num historical 17196
+Reading mention-level predictions from standard input
+Number of mentions: 68925
+Best recall 0.570796460177
+Best F1 0.223938223938 for (p,r)= 0.267692307692 0.192477876106
+AUC 0.10503220682 (stdev across tiebreakings: 1.38777878078e-17)
+
+#wow really, makes AUC go down?? 
+
+100 samp:
+(pf)kkeith@hobbes:~/policefatalities_emnlp2017$ cat code/models/preds/em0.json | python code/eval/evaluation.py
+num in test set 452, num historical 17196
+Reading mention-level predictions from standard input
+Number of mentions: 68925
+Best recall 0.570796460177
+Best F1 0.198243412798 for (p,r)= 0.228985507246 0.174778761062
+AUC 0.0980301969339 (stdev across tiebreakings: 0.0) 
+
+
+
+
+

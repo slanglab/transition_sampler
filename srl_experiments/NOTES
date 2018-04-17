@@ -1,0 +1,32 @@
+KAK 12-3-2017
+
+Using the ontonotes data for SRL argument labeling 
+
+
+PIPELINE: 
+(1) concatenate all the train, test, dev ontonotes 
+
+./concatdata.sh
+
+(2) seperate the columns, write predicate and arguments to file, write text to file so can parse it   
+
+python format.py 
+
+(3) run the raw text through Brendan's dependency parser w/ samples
+
+./go_parsing.sh
+
+
+(4) feature extraction + prediction 
+
+./go_prediction.sh
+
+
+------
+NOTES: 
+- Predictions are broken down into groups by (pred_lemma, pred_framesetID)
+- Skip the sentences that don't have any predicate-argument labels 
+
+----
+EXPERIMENT RESULTS: 
+

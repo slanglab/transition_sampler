@@ -1,0 +1,23 @@
+1	But	but	_	CC	_	14	cc	_	_
+2	because	because	_	IN	_	5	case	_	_
+3	of	of	_	IN	_	2	mwe	_	_
+4	the	the	_	DT	_	5	det	_	_
+5	way	way	_	NN	_	14	nmod	_	_
+6	Graham-Cassidy	graham-cassidy	_	NN	_	8	nsubjpass	_	_
+7	is	be	_	VBZ	_	8	auxpass	_	_
+8	designed	design	_	VBN	_	5	acl:relcl	_	_
+9	,	,	_	,	_	14	punct	_	_
+10	the	the	_	DT	_	11	det	_	_
+11	waivers	waiver	_	NNS	_	14	nsubj	_	_
+12	might	might	_	MD	_	14	aux	_	_
+13	actually	actually	_	RB	_	14	advmod	_	_
+14	comply	comply	_	VB	_	0	root	_	_
+15	this	this	_	DT	_	16	det	_	_
+16	time	time	_	NN	_	14	nmod:tmod	_	_
+17	,	,	_	,	_	14	punct	_	_
+18	according	accord	_	VBG	_	21	case	_	_
+19	to	to	_	TO	_	18	mwe	_	_
+20	several	several	_	JJ	_	21	amod	_	_
+21	experts	expert	_	NNS	_	14	nmod	_	_
+22	.	.	_	.	_	14	punct	_	_
+

@@ -1,0 +1,17 @@
+some commands
+
+  ./parsetext.sh unsolicited.txt
+  ./parsetext.sh cassidy.txt
+  ./parsetext.sh examples/cohn.txt
+
+view whole-structure statistics.  (um, --tlen is ignored??)
+  python higher.py -v --tlen 1 ../examples/pf1.txt.conllu ../examples/pf1.txt.pred
+
+view per-edge, or per-path, marginals.
+  python parsemar/higher.py -v --edgepred --tlen 2 cassidy.txt.conllu cassidy.txt.pred 
+
+note that you're supposed to give the gold standard as the second arg if you
+care about prec/rec ranking or brier scores or whatever.
+
+however if no gold, just give it the greedy prediction as the "gold" and it
+will run. try to ignore the "gold" info in the printout then.

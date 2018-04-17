@@ -1,0 +1,83 @@
+2017-11-20
+fixing another bug at creating the plaintext sentence-per-line file. ugh. looks good finally.
+
+hobbes:~/parsemar/pf % wc -l PoliceKillingsExtraction-ments-v1/test.json
+68925 PoliceKillingsExtraction-ments-v1/test.json
++./run.sh:4> wc -l test_sent.txt
+68925 test_sent.txt
+
+using the new corenlp runner.  looks better!
+
+hobbes:~/parsemar/pf % pv batch_test_sent_??.conllu|awk '$1==1' | wc -l
+69.2MB 0:00:00 [75.7MB/s] [=======================================================================================================================================>] 100%            
+68925
+hobbes:~/parsemar/pf % pv batch_test_sent_??.pred|awk '$1==1' | wc -l                                                                                                                
+ 220MB 0:00:04 [48.1MB/s] [=======================================================================================================================================>] 100%            
+68925
+
+=====================================================
+
+2017-11-20 rule results with correct preprocessing
+
+============ greedy (default) parse ===========
+num in test set 452, num historical 17196
+Reading mention-level predictions from standard input
+Number of mentions: 68925
+Best recall 0.570796460177
+Best F1 0.225053078556 for (p,r)= 0.216326530612 0.234513274336
+AUC 0.100444671535 (stdev across tiebreakings: 0.00180390343679)
+
+============== 1 sample ===============
+Best F1 0.212809917355 for (p,r)= 0.199612403101 0.227876106195
+AUC 0.0953815350511 (stdev across tiebreakings: 0.00277281621292)
+
+============== 10 samples ===============
+Best F1 0.220145379024 for (p,r)= 0.207436399217 0.234513274336
+AUC 0.0988772644156 (stdev across tiebreakings: 0.00125607435945)
+
+============== 100 samples ===============
+Best F1 0.221366698749 for (p,r)= 0.195911413969 0.254424778761
+AUC 0.10217209306 (stdev across tiebreakings: 0.000565838151779)
+
+
+===== sample-MAP with 10 samples ===============
+Best F1 0.211302211302 for (p,r)= 0.237569060773 0.190265486726
+AUC 0.0963689053069 (stdev across tiebreakings: 0.00249953764674)
+
+===== sample-MAP with 100 samples.. similar..
+Best F1 0.210970464135 for (p,r)= 0.201612903226 0.221238938053
+AUC 0.10001744594 (stdev across tiebreakings: 0.00223904300278)
+
+
+=====================================================================
+
+inferring 10 samples for training set - DONE nov20 afternoon/evening
+inferring 100 samples for test set - NOT DONE nov20 evening, DONE nov21
+inferring 100 samples for train set - STARTED nov21 DONE nov21
+
+=========================================
+
+high recall examples -- via python ~/policefatalities_emnlp2017/code/eval/evaluation.py --ent
+
+in the 10samp dataset.a pred=.10 which i think means, these are entities where
+out of all mentions, ONLY ONE sample had the rule fire.  that means: that
+mention has 10% prob of rule match.
+
+Dahir Adan -- had 10 mentions but could have been missed!
+
+NEG  rank=838(1112) pred=0.105361 nment=   1 tp=125 fp=713 fn=327 p=0.149165 r=0.276549          V. Ramesh
+POS  rank=839(1113) pred=0.105361 nment=  10 tp=126 fp=713 fn=326 p=0.150179 r=0.278761          Dahir Adan
+NEG  rank=840(1114) pred=0.105361 nment=  49 tp=126 fp=714 fn=326 p=0.150000 r=0.278761          Chuck Burton
+POS  rank=841(1115) pred=0.105361 nment=   2 tp=127 fp=714 fn=325 p=0.151011 r=0.280973          Timothy Davis
+NEG  rank=842(1116) pred=0.105361 nment=   1 tp=127 fp=715 fn=325 p=0.150831 r=0.280973          Ben Matson
+
+
+in the 100samp dataset.  there are examples where only a single 1% match!
+
+NEG  rank=1352(1682) pred=0.010050 nment=   1 tp=148 fp=1204 fn=304 p=0.109467 r=0.327434        Diego Alvarado
+NEG  rank=1353(1683) pred=0.010050 nment=   1 tp=148 fp=1205 fn=304 p=0.109387 r=0.327434        Frank Shyong
+POS  rank=1354(1684) pred=0.010050 nment=   4 tp=149 fp=1205 fn=303 p=0.110044 r=0.329646        Donny Daugherty
+NEG  rank=1355(1685) pred=0.010050 nment=   1 tp=149 fp=1206 fn=303 p=0.109963 r=0.329646        Mohammad Sadiq
+NEG  rank=1356(1686) pred=0.010050 nment=   9 tp=149 fp=1207 fn=303 p=0.109882 r=0.329646        Troy Ave
+NEG  rank=1357(1687) pred=0.010050 nment=  53 tp=149 fp=1208 fn=303 p=0.109801 r=0.329646        Myron Jarrett
+

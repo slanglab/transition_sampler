@@ -1,0 +1,35 @@
+1	The	the	_	DT	_	5	det	_	_
+2	Grover	Grover	_	NNP	_	5	compound	_	_
+3	Beach	Beach	_	NNP	_	5	compound	_	_
+4	Police	Police	_	NNP	_	5	compound	_	_
+5	Department	Department	_	NNP	_	7	nsubj	_	_
+6	has	have	_	VBZ	_	7	aux	_	_
+7	identified	identify	_	VBN	_	0	root	_	_
+8	the	the	_	DT	_	9	det	_	_
+9	man	man	_	NN	_	7	dobj	_	_
+10	whom	whom	_	WP	_	12	dobj	_	_
+11	officers	officer	_	NNS	_	12	nsubj	_	_
+12	shot	shoot	_	VBN	_	9	acl:relcl	_	_
+13	and	and	_	CC	_	12	cc	_	_
+14	killed	kill	_	VBN	_	12	conj	_	_
+15	last	last	_	JJ	_	16	amod	_	_
+16	week	week	_	NN	_	12	nmod:tmod	_	_
+17	as	as	_	IN	_	20	case	_	_
+18	Kenneth	Kenneth	_	NNP	_	20	compound	_	_
+19	Alan	Alan	_	NNP	_	20	compound	_	_
+20	Eustace	Eustace	_	NNP	_	12	nmod	_	_
+21	,	,	_	,	_	20	punct	_	_
+22	58	58	_	CD	_	20	amod	_	_
+23	.	.	_	.	_	7	punct	_	_
+
+1	Theyh	Theyh	_	NNP	_	3	nsubj	_	_
+2	have	have	_	VBP	_	3	aux	_	_
+3	identified	identify	_	VBN	_	0	root	_	_
+4	the	the	_	DT	_	5	det	_	_
+5	man	man	_	NN	_	3	dobj	_	_
+6	as	as	_	IN	_	9	case	_	_
+7	Kenneth	Kenneth	_	NNP	_	9	compound	_	_
+8	Alan	Alan	_	NNP	_	9	compound	_	_
+9	Eustace	Eustace	_	NNP	_	3	nmod	_	_
+10	.	.	_	.	_	3	punct	_	_
+

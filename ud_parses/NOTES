@@ -1,0 +1,26 @@
+The parse and sample files (en-ud-*):
+~/Desktop/parsemar/parsemar/ud_parses % rsync --progress -avz hobbes:~blodgett/parsemar/entropy/ .
+
+They're from v1.3.  double check with md5sum and yeah checks out
+~/Desktop/parsemar/parsemar/ud_parses % rsync hobbes:/data/ud-treebanks/v1.3/ud-treebanks-v1.3/UD_English/en-ud-dev.conllu gold_1.3_en-ud-dev.conllu
+
+doing just one greedy parse
+~/Desktop/parsemar/parsemar/ud_parses % python ../stuff/higher.py --greedy --edgepred --tlen 1 --verbose en-ud-dev.conllu en-ud-dev-greedy.pred > edgepred.greedy         
+
+CONFIRM for greedy that prec/rec are the same
+> mean(g$V3[g$V2==1])
+[1] 0.8082949
+> mean(g$V2[g$V3==1])
+[1] 0.8082949
+
+later experiments from the vary_pathlen.sh script
+
+=========
+MCMAP experiment
+
+cat en-ud-dev.pred|python ../stuff/mcmap.py > en-ud-dev.mcmap
+
+CONFIRM all the same data
+~/Desktop/parsemar/parsemar/ud_parses % paste =(cut -f2 en-ud-dev.pred) =(cut -f2 en-ud-dev.mcmap) =(cut -f2 en-ud-dev.conllu) | tabawk '!( $1==$2 && $2==$3)'
+
+

@@ -1,0 +1,23 @@
+
+SENTENCE	
+
+President Donald Trump is [unlikely] to nominate Gary Cohn , 
+    his top economic adviser , 
+    as the next Federal Reserve chairman , 
+indicating that 
+he is [open] to considering additional names for a pick 
+he has said he would [like] to [make] by year 's end , 
+(according) to *people* (familiar) with the president 's thinking .
+
+EDGEPRED 1.0 1 AAA [amod(people:50, familiar:51)]
+EDGEPRED 1.0 1 AAA [case(people:50, according:48)]
+EDGEPRED 0.44 1 AAA [nmod(unlikely:5, people:50)]
+EDGEPRED 0.21 0 AAA [nmod(like:40, people:50)]
+EDGEPRED 0.16 0 AAA [nmod(open:27, people:50)]
+EDGEPRED 0.07 0 AAA [nmod(make:42, people:50)]
+EDGEPRED 0.04 0 AAA [root(,:47, people:50)]
+EDGEPRED 0.04 0 AAA [nmod(adviser:14, people:50)]
+EDGEPRED 0.01 0 AAA [nmod(considering:29, people:50)]
+EDGEPRED 0.01 0 AAA [nmod(chairman:21, people:50)]
+EDGEPRED 0.01 0 AAA [nmod(indicating:23, people:50)]
+EDGEPRED 0.01 0 AAA [nmod(said:37, people:50)]
